@@ -1,16 +1,10 @@
-const { SHOW_ALL } = VisibilityFilters
-
+import { combineReducers } from 'redux'
 import {
   SET_VISIBILITY_FILTER,
   VisibilityFilters, 
   TOGGLE_TODO
 } from './actions'
-import { combineReducers } from 'redux'
-
-const initialState = {
-  visibilityFilter: VisibilityFilters.SHOW_ALL,
-  todos: []
-}
+const { SHOW_ALL } = VisibilityFilters
 
 //reduce composition
 function todos(state = [], action) {
@@ -50,10 +44,3 @@ const todoApp = combineReducers({
 })
 
 export default todoApp
-
-// function todoApp(state = {}, action) {
-//   return {
-//     visibilityFilter: visibilityFilter(state.visibilityFilter, action),
-//     todos: todos(state.todos, action)
-//   }
-// }
